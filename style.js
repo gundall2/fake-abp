@@ -210,3 +210,5 @@
       style.onCourseDataLoaded(data);
     });
   });
+
+})(blink);

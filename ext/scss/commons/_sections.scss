@@ -1,0 +1,374 @@
+
+$page_unit_header_width : 290px;
+$page_unit_padding_bottom : 50px;
+$page_unit_min_elements : $blink_header_height + 34px + $page_unit_padding_bottom;
+$page_unit_min_height : 500px;
+$page_unit_tab_height : 86px;
+
+$page_unit_header_width_tablet : 260px;
+
+
+.abp-section {
+  position: relative;
+  z-index: 10;
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    border: 0;
+    outline: 0;
+  }
+
+  a {
+    color: $color_1;
+    text-decoration: none;
+    transition: color .3s, background-color .3s, border-color .3s;
+    .usingMouse &:hover {
+      color: $color_1;
+        text-decoration: none;
+    }
+    &:focus { outline: none; }
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+
+  p {
+    margin: 0 0 $space_1 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  font-family: $font_family_1;
+  font-size: 20px;
+  &_home {
+    .abp-section-header {
+      min-height: $section_header_home_minheight;
+      height: 30vh;
+      background: transparent;
+      color: $negative_color;
+      position: relative;
+      &-inner {
+        min-height: $section_header_home_minheight;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        //padding-right: calc(#{$section_header_navigation_width} - (100vw -  #{$layout_max})/2); // TODO ADD WHEN vw is smaller than layout_max
+        padding-right: 0;
+
+        .abp-intro {
+          max-width: 800px;
+        }
+
+        & > * {
+          width: 100%;
+        }
+      }
+      .abp-navigation {
+        &_secondary {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+    .abp-section-content {
+      padding: $space_3 0 $space_3;
+      background: fade-out($negative_color, .5);
+      position: relative;
+      height: calc(70vh - #{$blink_header_height_base + 1px});
+      min-height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > .abp-container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      &::before,
+      &::after {
+        content: '';
+        @include gradient-2();
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        height: 100%;
+        width: calc(50vw - #{$layout_max/2 - 100px});
+        transition: width .3s linear;
+        pointer-events: none;
+      }
+      &::before {
+        left: 0;
+        transform: scale(-1);
+      }
+      &::after {
+        right: 0;
+      }
+      &.abp-slider--toleft {
+        &::before {
+          width: calc(50vw - #{$layout_max/2 - 20px});
+        }
+      }
+      &.abp-slider--toright {
+        &::after {
+          width: calc(50vw - #{$layout_max/2 - 20px});
+        }
+      }
+      .abp-unit {
+        margin-bottom: $space_3;
+      }
+    }
+  }
+
+  &_unit {
+    padding-bottom: $page_unit_padding_bottom;
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      align-content: flex-start;
+      .abp-section-header {
+        height: calc(100vh - #{$page_unit_min_elements});
+        min-height: $page_unit_min_height;
+        width: #{$page_unit_header_width};
+        position: relative;
+        z-index: 10;
+        background: $color_6;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        &-top {
+          @include gradient();
+          color: $negative_color;
+          padding: 30px;
+          position: relative;
+          margin: 0;
+          width: 100%;
+          min-height: 150px;
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 28px;
+            right: -20px;
+            z-index: 10;
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 20px solid $color_3;
+          }
+        }
+        &-bottom {
+          width: 100%;
+          position: relative;
+          flex-grow: 2;
+          padding: 20px 30px;
+          &::before {
+            content: '';
+            background : $negative_color;
+            opacity : .6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+          }
+          &-description {
+            position: relative;
+            z-index: 10;
+            padding-bottom: 140px;
+            padding-top: 102px; //External code
+            color: $color_1;
+          }
+          &-number {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 20;
+
+          }
+          &-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            @include img-fit();
+          }
+        }
+      }
+      .abp-section-content {
+        position: relative;
+        z-index: 5;
+        width: calc(100% - #{$page_unit_header_width});
+        height: calc(100vh - #{$page_unit_min_elements});
+        min-height: $page_unit_min_height;
+        overflow: hidden;
+        .abp-resources-list-wrapper {
+          height: calc(100vh - #{$page_unit_min_elements + $page_unit_tab_height});
+          min-height: $page_unit_min_height - $page_unit_tab_height;
+          overflow: hidden;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+          // Scrollbars
+          &::-webkit-scrollbar{width:6px!important;height:6px!important; background: fade-out($color_7, .75)}
+          &::-webkit-scrollbar-thumb{background-color: $color_3; border-radius: 20px;}
+          &::-webkit-scrollbar-track{background-color: $color_7; border-radius: 20px;}
+
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: $mq_max_large_tablet) {
+  .abp-section {
+    &_home & {
+      &-header{
+        &-inner {
+          padding-right: 52%;
+        }
+      }
+
+      &-content {
+        overflow: hidden;
+        &::before,
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+
+}
+@media (max-width: $mq_max_medium_tablet) {
+  .abp-section {
+    &_unit {
+      &-inner {
+        .abp-section-header {
+          width: $page_unit_header_width_tablet;
+          &-top {
+            padding: $space_1;
+          }
+          &-bottom {
+            padding: $space_1;
+          }
+        }
+        .abp-section-content {
+          width: calc(100% - #{$page_unit_header_width_tablet});
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mq_max_small_tablet) {
+  .abp-section {
+    &_home & {
+      &-header {
+        min-height: 0;
+        height: auto;
+        &-inner {
+          padding-right: 0;
+          min-height: 0;
+          height: auto;
+          margin-bottom: $space_1;
+        }
+        .abp-navigation_secondary {
+          position: relative;
+          bottom: auto;
+          right: auto;
+          ul {
+            li {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      &-content {
+        height: 400px;
+      }
+    }
+    &_unit {
+      &-inner {
+        flex-wrap: wrap;
+        .abp-section-header {
+          width: 100%;
+          height: auto;
+          min-height: 0;
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -20px;
+            right: 34px;
+            z-index: 10;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 20px solid $negative_color;
+          }
+          &-top {
+            min-height: 0;
+            &::before {
+              content: none;
+            }
+          }
+          &-bottom {
+            background: $negative_color;
+            &::before {
+              content: none;
+            }
+            &-number {
+              right: $space_1;
+              left: auto;
+              bottom: auto;
+              top: 50%;
+              transform: translate(0, -50%) scale(.6);
+              transform-origin: 100% 50%;
+            }
+            &-background {
+              display: none;
+            }
+            &-description {
+              padding: $space_1 60px $space_1 0;
+
+            }
+          }
+        }
+
+        .abp-section-content {
+          width: 100%;
+          height: auto;
+          .abp-resources-list-wrapper {
+            height: auto;
+            overflow: visible;
+            padding-left: $space_1/2;
+            padding-right: $space_1/2;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mq_max_smallest_phone) {
+  .abp-section {
+    &_home & {
+      &-content {
+        height: auto;
+      }
+    }
+  }
+}

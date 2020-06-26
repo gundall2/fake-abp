@@ -1,0 +1,112 @@
+.abp-container {
+  width: 100%;
+  max-width: $layout_max;
+  margin: 0 auto;
+  padding: 0 $space_1;
+
+  @include clearfix();
+
+  .ie .abp-section_home .abp-section-content > & {
+    margin: 0;
+  }
+
+  &_2 {
+    max-width: $layout_max_2;
+  }
+  &_3 {
+    max-width: $layout_max_3;
+  }
+  @media (max-width: $mq_max_large_tablet) {
+    padding-left: $space_1/2;
+    padding-right: $space_1/2;
+  }
+}
+
+
+.abp-page {
+  display: none;
+  padding-top: $blink_header_height;
+  background-color: $background_color;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: $negative_color;
+  position: relative;
+  z-index: 1000;
+  @media (max-width: $mq_max_small_tablet) {
+    padding-top: $blink_header_height*2;
+    body.app:not(.offline-pc) & {
+      padding-top: $blink_header_height;
+    }
+  }
+  &_home {
+    padding-top: $blink_header_height_base;
+    @media (max-width: $mq_max_small_tablet) {
+      padding-top: $blink_header_height_base*2;
+      body.app:not(.offline-pc) & {
+        padding-top: $blink_header_height_base;
+      }
+    }
+  }
+  .abp-gohome {
+    position: relative;
+    z-index: 10;
+  }
+  &::before {
+    content: '';
+    background : fade-out($color_1,.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .abp-body-home & {
+    &_home {
+      display: block;
+    }
+  }
+  .abp-body-unit & {
+    &_unit {
+      display: block;
+    }
+  }
+}
+
+// Book index
+#book-index.active {
+  z-index: 1100;
+}
+
+// Custom by blink.
+#book-index .col-main {
+  background: #DF6A46;
+}
+
+body:not(.isTablet) #book-index #indice .units ul li:not(.disabled) a:hover,
+#book-index #indice .units ul li.active a {
+  background: #DF6A46;
+}
+
+#book-index #indice .unit-content .actividades .item {
+  opacity: 1;
+}
+
+#book-index #indice .unit-content a:hover,
+#book-index #indice li.current a {color: $color_1}
+
+
+// sliders
+
+#actividad {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: $color_1;
+  .content {
+    background: none;
+  }
+}

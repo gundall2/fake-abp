@@ -1,0 +1,75 @@
+body.view-mode {
+	background: $background_color;
+	overflow: auto;
+	padding: 0;
+	margin: 0;
+	&::before {
+		content: '';
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: $background_color;
+		z-index: 1002;
+	}
+	&.canvas_events_loaded::before,
+	.htmlReady &::before,
+	&.body_htmlBook::before {
+		//display: none;
+		z-index: 0;
+		pointer-events: none;
+	}
+	.abp-isBookCover &,
+	.htmlReady &.abp-body-home,
+	.htmlReady &.abp-body-unit {
+		&::before {
+			z-index: 110;
+		}
+	}
+}
+
+
+
+body:not(.edit) {
+	#mainform {
+		opacity: 0;
+		.htmlReady & {
+			opacity: 1;
+		}
+	}
+
+	&.body_htmlBook {
+		#mainform {
+			opacity: 1;
+		}
+	}
+
+  .abp-isBookCover & {
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: common-ligatures;
+  }
+
+}
+
+body.view-mode.body_clase,
+body.view-mode.body_curso {
+	.navbar.libro {
+		//background: $color_1!important;
+		.libro-left,
+		.libro-right {
+			//background: $color_1!important;
+		}
+		.libro-right ul li.close-back-wrapper,
+		.navbar-divider {
+			&::after {
+				//background-color: $color_1;
+				//left: 0;
+			}
+		}
+	}
+}

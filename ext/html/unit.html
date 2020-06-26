@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="htmlReady">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#332F2B">
+    <title>ABP Unit</title>
+    <link href="style.css" rel="stylesheet">
+
+  </head>
+  <body class="view-mode abp-body-unit">
+
+<!-- Variables:
+* abpApp.text.goback = 'Volver'
+* abpApp.text.pages = 'pág'
+* unitTitle = unit title (e.g. "Título del tema")
+* unitDescription = unit description (e.g. "Descripción del tema")
+* unitImage = unit image URL
+* unitNumber = unit number sarting with 00 (e.g. "05")
+* abpApp.text.studentarea = 'Sesión del alumno'
+* abpApp.text.teacherarea = 'Área del profesor'
+* resourceImage = Resource Image URL (e.g. '/images/image.png')
+* resourceTitle = Resource Title (e.g. 'Nombre del recurso')
+* resourceDescription = Resource Description (e.g. 'Descripción del recurso')
+* resourceType = Resource Type (e.g. 'activity')
+*
+-->
+
+<div class="abp-page abp-page_unit abp-body-user-not-student">
+  <div class="abp-gohome">
+    <div class="abp-container abp-container_3">
+      <a href="#" class="link link_back">
+        <span>'+abpApp.text.goback+'</span>
+      </a>
+    </div>
+  </div>
+  <section class="abp-section abp-section_unit">
+    <div class="abp-container abp-container_2">
+      <div class="abp-section_unit-inner">
+        <header class="abp-section-header">
+          <div class="abp-section-header-top">
+            <h1 class="abp-title-2" id="abp-unit-title"></h1>
+          </div>
+          <div class="abp-section-header-bottom">
+            <div class="abp-section-header-bottom-description">
+              <h2 class="abp-title-3" id="abp-unit-description"></h2>
+            </div>
+            <div class="abp-section-header-bottom-number abp-unit-number abp-unit-number_large">
+              <div class="abp-unit-number-inner"><span id="abp-unit-number"></span></div>
+            </div>
+            <div class="abp-section-header-bottom-background" id="abp-unit-image">
+              <!--<img src="'+unitImage+'">-->
+            </div>
+          </div>
+        </header>
+
+        <div class="abp-section-content">
+          <div class="abp-tabs-wrapper">
+            <ul class="abp-tabs">
+              <li class="abp-tab abp-tab_current">
+                <a href="#abp-studentarea">'+abpApp.text.studentarea+'</a>
+              </li>
+              <li class="abp-tab">
+                <a href="#abp-teacherarea">'+abpApp.text.teacherarea+'</a>
+              </li>
+            </ul>
+            <div class="abp-tabs-content-wrapper">
+              <div class="abp-tabs-content abp-tabs-content_current" id="abp-studentarea">
+                <div class="abp-resources-list-wrapper">
+                  <ul class="abp-resources-list">
+                    <!-- For each to get Activities from unit visible to Students -->
+                    <li class="abp-resources-list-item">
+                      <article class="abp-resources-list-item-article">
+                        <a href="#" class="abp-resources-list-item-inner">
+                          <div class="abp-resources-list-item-image">
+                            <div class="abp-resources-list-item-image-inner">
+                              <img src="'+resourceImage+'" alt="'+resourceTitle+'">
+                            </div>
+                          </div>
+                          <div class="abp-resources-list-item-text">
+
+                            <div class="abp-resources-list-item-text-main">
+                              <div class="abp-resources-list-item-text-main-top">
+                                <!-- IF Teacher -->
+                                <button class="abp-button-icon abp-button-sendactivity abp-js--sendActivity">
+                                  <i class="abp-icon" aria-hidden="true"></i>
+                                </button>
+                                <!-- ENDIF -->
+                                <h3 class="abp-title-5">'+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+'</h3>
+                              </div>
+                              <div class="abp-resources-list-item-text-main-bottom">
+                                <p>'+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+'</p>
+                              </div>
+                            </div>
+                            <div class="abp-resources-list-item-text-aux abp-resources-list-item-text-aux-2">
+                              <div class="abp-resources-list-item-text-aux-left">
+                                <!-- IF Teacher -->
+                                <button class="abp-button-icon abp-button-lock abp-unlock abp-js--lockActivity">
+                                  <i class="abp-icon" aria-hidden="true"></i>
+                                </button>
+                                <!-- ELSE -->
+                                <span class="abp-button-icon abp-button-lock">
+                                  <i class="abp-icon" aria-hidden="true"></i>
+                                </span>
+                                <!-- ENDIF -->
+                              </div>
+                              <div class="abp-resources-list-item-text-aux-right">
+                                <div class="abp-activity-pages"><span>7</span> págs</div>
+                                <div class="abp-activity-grade"><span>10</span></div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </article>
+                    </li>
+                    <!--End forEach-->
+                  </ul>
+                </div>
+              </div>
+              <div class="abp-tabs-content" id="abp-teacherarea">
+                <div class="abp-resources-list-wrapper">
+                  <ul class="abp-resources-list abp-resources-list_2">
+                    <!-- For each to get Activities from unit visible only for Teachers -->
+                    <li class="abp-resources-list-item">
+                      <article class="abp-resources-list-item-article">
+                        <a href="#" class="abp-resources-list-item-inner">
+                          <div class="abp-resources-list-item-image">
+                            <div class="abp-resources-list-item-image-inner">
+                              <span class="abp-resources-list-icon abp-resources-list-icon_'+resourceType+'" aria-hidden="true"></span>
+                            </div>
+                          </div>
+                          <div class="abp-resources-list-item-text">
+                            <div class="abp-resources-list-item-text-main">
+                              <div class="abp-resources-list-item-text-main-top">
+                                <h3 class="abp-title-5">'+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+'</h3>
+                              </div>
+                              <div class="abp-resources-list-item-text-main-bottom">
+                                <p>'+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+'</p>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </article>
+                    </li>
+                    <!--End forEach-->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <button class="abp-navigation-units abp-navigation-units-prev abp-disabled">
+    <span class="icon"></span>
+  </button>
+  <button class="abp-navigation-units abp-navigation-units-next abp-disabled">
+    <span class="icon"></span>
+  </button>
+
+</div>
+</body>
+</html>

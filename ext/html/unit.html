@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#332F2B">
-    <title>ABP Unit</title>
+    <title>FKABP Unit</title>
     <link href="style.css" rel="stylesheet">
 
   </head>
-  <body class="view-mode abp-body-unit">
+  <body class="view-mode fkabp-body-unit">
 
 <!-- Variables:
-* abpApp.text.goback = 'Volver'
-* abpApp.text.pages = 'pág'
+* fkabpApp.text.goback = 'Volver'
+* fkabpApp.text.pages = 'pág'
 * unitTitle = unit title (e.g. "Título del tema")
 * unitDescription = unit description (e.g. "Descripción del tema")
 * unitImage = unit image URL
 * unitNumber = unit number sarting with 00 (e.g. "05")
-* abpApp.text.studentarea = 'Sesión del alumno'
-* abpApp.text.teacherarea = 'Área del profesor'
+* fkabpApp.text.studentarea = 'Sesión del alumno'
+* fkabpApp.text.teacherarea = 'Área del profesor'
 * resourceImage = Resource Image URL (e.g. '/images/image.png')
 * resourceTitle = Resource Title (e.g. 'Nombre del recurso')
 * resourceDescription = Resource Description (e.g. 'Descripción del recurso')
@@ -28,87 +28,87 @@
 *
 -->
 
-<div class="abp-page abp-page_unit abp-body-user-not-student">
-  <div class="abp-gohome">
-    <div class="abp-container abp-container_3">
+<div class="fkabp-page fkabp-page_unit fkabp-body-user-not-student">
+  <div class="fkabp-gohome">
+    <div class="fkabp-container fkabp-container_3">
       <a href="#" class="link link_back">
-        <span>'+abpApp.text.goback+'</span>
+        <span>'+fkabpApp.text.goback+'</span>
       </a>
     </div>
   </div>
-  <section class="abp-section abp-section_unit">
-    <div class="abp-container abp-container_2">
-      <div class="abp-section_unit-inner">
-        <header class="abp-section-header">
-          <div class="abp-section-header-top">
-            <h1 class="abp-title-2" id="abp-unit-title"></h1>
+  <section class="fkabp-section fkabp-section_unit">
+    <div class="fkabp-container fkabp-container_2">
+      <div class="fkabp-section_unit-inner">
+        <header class="fkabp-section-header">
+          <div class="fkabp-section-header-top">
+            <h1 class="fkabp-title-2" id="fkabp-unit-title"></h1>
           </div>
-          <div class="abp-section-header-bottom">
-            <div class="abp-section-header-bottom-description">
-              <h2 class="abp-title-3" id="abp-unit-description"></h2>
+          <div class="fkabp-section-header-bottom">
+            <div class="fkabp-section-header-bottom-description">
+              <h2 class="fkabp-title-3" id="fkabp-unit-description"></h2>
             </div>
-            <div class="abp-section-header-bottom-number abp-unit-number abp-unit-number_large">
-              <div class="abp-unit-number-inner"><span id="abp-unit-number"></span></div>
+            <div class="fkabp-section-header-bottom-number fkabp-unit-number fkabp-unit-number_large">
+              <div class="fkabp-unit-number-inner"><span id="fkabp-unit-number"></span></div>
             </div>
-            <div class="abp-section-header-bottom-background" id="abp-unit-image">
+            <div class="fkabp-section-header-bottom-background" id="fkabp-unit-image">
               <!--<img src="'+unitImage+'">-->
             </div>
           </div>
         </header>
 
-        <div class="abp-section-content">
-          <div class="abp-tabs-wrapper">
-            <ul class="abp-tabs">
-              <li class="abp-tab abp-tab_current">
-                <a href="#abp-studentarea">'+abpApp.text.studentarea+'</a>
+        <div class="fkabp-section-content">
+          <div class="fkabp-tabs-wrapper">
+            <ul class="fkabp-tabs">
+              <li class="fkabp-tab fkabp-tab_current">
+                <a href="#fkabp-studentarea">'+fkabpApp.text.studentarea+'</a>
               </li>
-              <li class="abp-tab">
-                <a href="#abp-teacherarea">'+abpApp.text.teacherarea+'</a>
+              <li class="fkabp-tab">
+                <a href="#fkabp-teacherarea">'+fkabpApp.text.teacherarea+'</a>
               </li>
             </ul>
-            <div class="abp-tabs-content-wrapper">
-              <div class="abp-tabs-content abp-tabs-content_current" id="abp-studentarea">
-                <div class="abp-resources-list-wrapper">
-                  <ul class="abp-resources-list">
+            <div class="fkabp-tabs-content-wrapper">
+              <div class="fkabp-tabs-content fkabp-tabs-content_current" id="fkabp-studentarea">
+                <div class="fkabp-resources-list-wrapper">
+                  <ul class="fkabp-resources-list">
                     <!-- For each to get Activities from unit visible to Students -->
-                    <li class="abp-resources-list-item">
-                      <article class="abp-resources-list-item-article">
-                        <a href="#" class="abp-resources-list-item-inner">
-                          <div class="abp-resources-list-item-image">
-                            <div class="abp-resources-list-item-image-inner">
+                    <li class="fkabp-resources-list-item">
+                      <article class="fkabp-resources-list-item-article">
+                        <a href="#" class="fkabp-resources-list-item-inner">
+                          <div class="fkabp-resources-list-item-image">
+                            <div class="fkabp-resources-list-item-image-inner">
                               <img src="'+resourceImage+'" alt="'+resourceTitle+'">
                             </div>
                           </div>
-                          <div class="abp-resources-list-item-text">
+                          <div class="fkabp-resources-list-item-text">
 
-                            <div class="abp-resources-list-item-text-main">
-                              <div class="abp-resources-list-item-text-main-top">
+                            <div class="fkabp-resources-list-item-text-main">
+                              <div class="fkabp-resources-list-item-text-main-top">
                                 <!-- IF Teacher -->
-                                <button class="abp-button-icon abp-button-sendactivity abp-js--sendActivity">
-                                  <i class="abp-icon" aria-hidden="true"></i>
+                                <button class="fkabp-button-icon fkabp-button-sendactivity fkabp-js--sendActivity">
+                                  <i class="fkabp-icon" aria-hidden="true"></i>
                                 </button>
                                 <!-- ENDIF -->
-                                <h3 class="abp-title-5">'+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+'</h3>
+                                <h3 class="fkabp-title-5">'+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+'</h3>
                               </div>
-                              <div class="abp-resources-list-item-text-main-bottom">
+                              <div class="fkabp-resources-list-item-text-main-bottom">
                                 <p>'+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+'</p>
                               </div>
                             </div>
-                            <div class="abp-resources-list-item-text-aux abp-resources-list-item-text-aux-2">
-                              <div class="abp-resources-list-item-text-aux-left">
+                            <div class="fkabp-resources-list-item-text-aux fkabp-resources-list-item-text-aux-2">
+                              <div class="fkabp-resources-list-item-text-aux-left">
                                 <!-- IF Teacher -->
-                                <button class="abp-button-icon abp-button-lock abp-unlock abp-js--lockActivity">
-                                  <i class="abp-icon" aria-hidden="true"></i>
+                                <button class="fkabp-button-icon fkabp-button-lock fkabp-unlock fkabp-js--lockActivity">
+                                  <i class="fkabp-icon" aria-hidden="true"></i>
                                 </button>
                                 <!-- ELSE -->
-                                <span class="abp-button-icon abp-button-lock">
-                                  <i class="abp-icon" aria-hidden="true"></i>
+                                <span class="fkabp-button-icon fkabp-button-lock">
+                                  <i class="fkabp-icon" aria-hidden="true"></i>
                                 </span>
                                 <!-- ENDIF -->
                               </div>
-                              <div class="abp-resources-list-item-text-aux-right">
-                                <div class="abp-activity-pages"><span>7</span> págs</div>
-                                <div class="abp-activity-grade"><span>10</span></div>
+                              <div class="fkabp-resources-list-item-text-aux-right">
+                                <div class="fkabp-activity-pages"><span>7</span> págs</div>
+                                <div class="fkabp-activity-grade"><span>10</span></div>
                               </div>
                             </div>
                           </div>
@@ -119,24 +119,24 @@
                   </ul>
                 </div>
               </div>
-              <div class="abp-tabs-content" id="abp-teacherarea">
-                <div class="abp-resources-list-wrapper">
-                  <ul class="abp-resources-list abp-resources-list_2">
+              <div class="fkabp-tabs-content" id="fkabp-teacherarea">
+                <div class="fkabp-resources-list-wrapper">
+                  <ul class="fkabp-resources-list fkabp-resources-list_2">
                     <!-- For each to get Activities from unit visible only for Teachers -->
-                    <li class="abp-resources-list-item">
-                      <article class="abp-resources-list-item-article">
-                        <a href="#" class="abp-resources-list-item-inner">
-                          <div class="abp-resources-list-item-image">
-                            <div class="abp-resources-list-item-image-inner">
-                              <span class="abp-resources-list-icon abp-resources-list-icon_'+resourceType+'" aria-hidden="true"></span>
+                    <li class="fkabp-resources-list-item">
+                      <article class="fkabp-resources-list-item-article">
+                        <a href="#" class="fkabp-resources-list-item-inner">
+                          <div class="fkabp-resources-list-item-image">
+                            <div class="fkabp-resources-list-item-image-inner">
+                              <span class="fkabp-resources-list-icon fkabp-resources-list-icon_'+resourceType+'" aria-hidden="true"></span>
                             </div>
                           </div>
-                          <div class="abp-resources-list-item-text">
-                            <div class="abp-resources-list-item-text-main">
-                              <div class="abp-resources-list-item-text-main-top">
-                                <h3 class="abp-title-5">'+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+'</h3>
+                          <div class="fkabp-resources-list-item-text">
+                            <div class="fkabp-resources-list-item-text-main">
+                              <div class="fkabp-resources-list-item-text-main-top">
+                                <h3 class="fkabp-title-5">'+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+''+resourceTitle+'</h3>
                               </div>
-                              <div class="abp-resources-list-item-text-main-bottom">
+                              <div class="fkabp-resources-list-item-text-main-bottom">
                                 <p>'+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+''+resourceDescription+'</p>
                               </div>
                             </div>
@@ -155,10 +155,10 @@
     </div>
   </section>
 
-  <button class="abp-navigation-units abp-navigation-units-prev abp-disabled">
+  <button class="fkabp-navigation-units fkabp-navigation-units-prev fkabp-disabled">
     <span class="icon"></span>
   </button>
-  <button class="abp-navigation-units abp-navigation-units-next abp-disabled">
+  <button class="fkabp-navigation-units fkabp-navigation-units-next fkabp-disabled">
     <span class="icon"></span>
   </button>
 
